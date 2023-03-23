@@ -1,7 +1,7 @@
 """Combo Meals - Version 1
 Use easygui to allow a user to manipulate the combo list"""
 
-import easygui  # importing easygui
+import easygui as eg  # importing easygui as 'eg' to save time later
 
 combos = {  # created a dictionary containing current combos
     "Value": {
@@ -20,7 +20,3 @@ combos = {  # created a dictionary containing current combos
         "Smoothie": 2.00
     }
 }
-
-proceed = easygui.buttonbox("Hello! Welcome to the Ultimate Burger Combo Menu!\n"
-                  "What would you like to do?", "Menu Choices", choices=("Search", "Add", "Delete", "Exit"))
-while proceed != "Exit":
