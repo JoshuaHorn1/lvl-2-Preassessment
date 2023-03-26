@@ -1,5 +1,5 @@
 """Combo Meals - Version 1
-Use easygui to allow a user to manipulate the combo list"""
+Using only dictionary instead of list alternative"""
 
 import easygui as eg  # importing easygui as 'eg' to save time later
 
