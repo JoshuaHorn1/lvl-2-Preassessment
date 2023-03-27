@@ -1,5 +1,5 @@
 """Combo Meals - Version 1
-create a dictionary containing the combos"""
+create a dictionary/list containing the combos"""
 
 combos_dictionary = {  # created a dictionary containing current combos
     "Value": {
@@ -19,7 +19,7 @@ combos_dictionary = {  # created a dictionary containing current combos
     }
 }
 
-combos_list = [
+combos_list = [  # created a list housing the combo variables
     ["Value",
         ["Beef burger", 5.69],
         ["Fizzy drink", 1.00],

@@ -1,4 +1,4 @@
-"""Combo Meals - Version 1
+"""Combo Meals - Version 2
 Using only dictionary instead of list alternative"""
 
 import easygui as eg  # importing easygui as 'eg' to save time later
