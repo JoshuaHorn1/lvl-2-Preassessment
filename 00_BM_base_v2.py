@@ -1,9 +1,11 @@
 """Base Burger Menu Combo Program file - Version 2
 Components added after they have been created and tested
-Added the combo meals dictionary"""
+Added the combo meals dictionary
+added the functional Exit button"""
 
 # imports...
 import easygui as eg  # importing easygui as 'eg' to save time later
+
 
 # lists/dictionaries
 combos = {  # created a dictionary containing current combos
@@ -24,21 +26,38 @@ combos = {  # created a dictionary containing current combos
     }
 }
 
+
 # functions...
 def mainmenu(proceed):  # a function containing the code for the main menu
-    while proceed != "Exit":  # create a while loop to incorporate functions later on
-        if proceed == "Search":
-            proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
+    quit = ""
+    while quit != "Yes - Quit":  # test to see if user has quit, if not, the program will loop
+        print("33", quit)
+        print(proceed)
+        while proceed != "Exit":  # create a while loop to incorporate functions later on
+            if proceed == "Search":
+                proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
+                print(proceed)
+            elif proceed == "Add":
+                proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
+                print(proceed)
+            elif proceed == "Delete":
+                proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
+                print(proceed)
+            elif proceed == "Help":
+                proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
+                print(proceed)
+            else:
+                proceed = eg.buttonbox("How would you like to proceed?", "Menu Choices", choices=("Search", "Add", "Delete", "Help", "Exit"))
+        proceed = ""
+        quit = eg.buttonbox("Are you sure you want to quit? All progress will be lost!!", "Quit?", choices=("Yes - Quit", "No - Cancel"))
+        print("50", quit)
+        if quit == "No - Cancel":
+            quit = ""
+            proceed = eg.buttonbox("How would you like to proceed?", "Menu Choices", choices=("Search", "Add", "Delete", "Help", "Exit"))
+    eg.msgbox("Thank you for using this Menu Combo Program!!", "Goodbye!", ok_button=":D")
 
-        elif proceed == "Add":
-            proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
-
-        elif proceed == "Delete":
-            proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
-
-        elif proceed == "Help":
-            proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
 
 # Main code...
 mainmenu(eg.buttonbox("Hello! Welcome to the Ultimate Burger Combo Menu!\n"  # calls on the main menu function
                       "What would you like to do?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit")))
+
