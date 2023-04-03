@@ -1,4 +1,4 @@
-"""Base Burger Menu Combo Program file - Version 2
+"""Burger Menu Combo Base/Main Program file - Version 2
 Components added after they have been created and tested
 Added the combo meals dictionary
 added the functional Exit button"""
@@ -31,26 +31,22 @@ combos = {  # created a dictionary containing current combos
 def mainmenu(proceed):  # a function containing the code for the main menu
     quit = ""
     while quit != "Yes - Quit":  # test to see if user has quit, if not, the program will loop
-        print("33", quit)
-        print(proceed)
         while proceed != "Exit":  # create a while loop to incorporate functions later on
             if proceed == "Search":
                 proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
-                print(proceed)
+
             elif proceed == "Add":
                 proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
-                print(proceed)
+
             elif proceed == "Delete":
                 proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
-                print(proceed)
+
             elif proceed == "Help":
                 proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Delete", "Help", "Exit"))
-                print(proceed)
+
             else:
                 proceed = eg.buttonbox("How would you like to proceed?", "Menu Choices", choices=("Search", "Add", "Delete", "Help", "Exit"))
-        proceed = ""
         quit = eg.buttonbox("Are you sure you want to quit? All progress will be lost!!", "Quit?", choices=("Yes - Quit", "No - Cancel"))
-        print("50", quit)
         if quit == "No - Cancel":
             quit = ""
             proceed = eg.buttonbox("How would you like to proceed?", "Menu Choices", choices=("Search", "Add", "Delete", "Help", "Exit"))

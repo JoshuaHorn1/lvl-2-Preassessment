@@ -1,4 +1,4 @@
-"""Base Burger Menu Combo Program file - Version 1
+"""Burger Menu Combo Base/Main Program file - Version 1
 Components added after they have been created and tested
 Added the code for the main menu to branch to other components"""
 

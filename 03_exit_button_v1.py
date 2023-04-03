@@ -46,7 +46,6 @@ def mainmenu(proceed):  # a function containing the code for the main menu
                 print(proceed)
             else:
                 proceed = eg.buttonbox("How would you like to proceed?", "Menu Choices", choices=("Search", "Add", "Delete", "Help", "Exit"))
-        proceed = ""
         quit = eg.buttonbox("Are you sure you want to quit? All progress will be lost!!", "Quit?", choices=("Yes - Quit", "No - Cancel"))
         print("50", quit)
         if quit == "No - Cancel":
