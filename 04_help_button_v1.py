@@ -24,11 +24,10 @@ combos = {  # created a dictionary containing current combos
     }
 }
 
-
-# functions...
-def helpbutton():  # A function containing the code for when a user interacts with the help button in the main menu
-    help_options = eg.buttonbox("Sure! What do you need help with?", "HELP MENU", choices=("General", "Search", "Add",
-                                                                                           "Delete", "Help", "Exit"))
+# Main code...
+help_options = eg.buttonbox("Sure! What do you need help with?", "HELP MENU", choices=("General", "Search", "Add",
+                                                                                       "Delete", "Help", "Exit"))
+while help_options != "Cancel":
     if help_options == "General":
         eg.msgbox("")
     elif help_options == "Search":
