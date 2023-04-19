@@ -1,5 +1,5 @@
 """Search Combo - Version 3
-Incorporated change component into search button/function"""
+Bug fixes"""
 
 # Imports...
 import easygui as eg
