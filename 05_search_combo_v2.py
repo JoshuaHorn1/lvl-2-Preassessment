@@ -29,6 +29,7 @@ while proceed != "Cancel":
         items = "\n".join([f"{item}: {price}" for item, price in searched_for.items()])
         proceed = eg.buttonbox(f"Here is the combo:\n{items}\n\nWhat would you like to do with it?", "Query Found",
                                choices=("Change", "Delete", "Cancel"))
+        print(proceed)
         if proceed == "Change":
             print("change")
         elif proceed == "Delete":

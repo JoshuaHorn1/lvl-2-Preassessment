@@ -1,4 +1,4 @@
-"""Search Combo - Version 3
+"""Search Combo - Version 5
 Incorporated change component into search button/function"""
 
 # Imports...

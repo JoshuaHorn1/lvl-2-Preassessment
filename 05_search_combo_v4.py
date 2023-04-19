@@ -1,4 +1,4 @@
-"""Search Combo - Version 3
+"""Search Combo - Version 4
 Incorporated delete component into the search function
 Uppercased the main parts of the dictionary to allow for more accurate calling"""
 

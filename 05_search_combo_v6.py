@@ -1,4 +1,4 @@
-"""Search Combo - Version 3
+"""Search Combo - Version 6
 Bug fixes"""
 
 # Imports...
@@ -48,28 +48,28 @@ def search_button():
                         combo_items.update({temp_item_name: temp_item_price})
                         temp_num_items -= 1
                     full_new_combo = {temp_name: combo_items}
-                    new_items = "\n".join([f"{item}: {price}" for item, price in full_new_combo.items()])
+                    items = "\n".join([f"{item}: {price}" for item, price in combo_items.items()])
                     next = eg.buttonbox(f"Here is the combo, {temp_name.capitalize()}:\n"
-                                        f"{new_items}\n"
+                                        f"{items}\n"
                                         f"\n"
-                                        f"What would you like to do with it?", "Query Found", choices=("Use", "Cancel"))
+                                        f"What would you like to do with it?", "Combo Created", choices=("Use", "Cancel"))
                     if next == "Use":
                         combos.pop(query)
                         combos.update(full_new_combo)
-                        eg.msgbox(f"Your combo '{temp_name.capitalize()}' has been added to the list in place of "
-                                  f"{query.capitalize()}", "Combo Added")
+                        eg.msgbox(f"Your changes have been saved, and the combo '{temp_name.capitalize()}' has been added "
+                                  f"to the list in place of '{query.capitalize()}'.", "Combo Added")
+                        return
             elif proceed == "Delete":
                 confirm_delete = eg.buttonbox(f"Are you sure you want to delete this combo - {query.capitalize()}?", "Confirm Delete",
                                               choices=("Yes - Delete", "No - Cancel"))
                 if confirm_delete == "Yes - Delete":
                     combos.pop(query)
-                    print(combos)
                     eg.msgbox("Combo deleted.", "Combo Deleted")
                     return
         else:
             proceed = eg.buttonbox("Combo not found. Try again or Cancel.", "Query Not Found", choices=("Try Again", "Cancel"))
             if proceed == "Try Again":
-                query = eg.enterbox("Enter the combo name to search for:", "Enter Query")
+                query = eg.enterbox("Enter the combo name to search for:", "Enter Query").upper()
 
 
 # Main code...
