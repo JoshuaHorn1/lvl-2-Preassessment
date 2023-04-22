@@ -1,7 +1,8 @@
-"""Burger Menu Combo Base/Main Program file - Version 4
+"""Burger Menu Combo Base/Main Program file - Version 5
 Components added after they have been created and tested
 Added add combo button
-Removed 'delete' option from main menu and help menu
+Removed 'Delete' option from main menu and help menu
+Added "List' option to main menu and help menu
 Updated text in help menu"""
 
 # imports...
@@ -34,18 +35,20 @@ def mainmenu(proceed):  # a function containing the code for the main menu
     while quit != "Yes - Quit":  # test to see if user has quit, if not, the program will loop
         while proceed != "Exit":  # create a while loop to incorporate functions later on
             if proceed == "Search":
-                search_button()
-                proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Help", "Exit"))
+                searchbutton()
+                proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "List", "Help", "Exit"))
             elif proceed == "Add":
                 addcombo()
-                proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Help", "Exit"))
+                proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "List", "Help", "Exit"))
+            elif proceed == "List":
+                proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "List", "Help", "Exit"))
             elif proceed == "Help":
                 helpbutton()
-                proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "Help", "Exit"))
+                proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "List", "Help", "Exit"))
         quit = eg.buttonbox("Are you sure you want to quit? All progress will be lost!!", "Quit?", choices=("Yes - Quit", "No - Cancel"))
         if quit == "No - Cancel":
             quit = ""
-            proceed = eg.buttonbox("How would you like to proceed?", "Menu Choices", choices=("Search", "Add", "Help", "Exit"))
+            proceed = eg.buttonbox("How would you like to proceed?", "MAIN MENU", choices=("Search", "Add", "List", "Help", "Exit"))
     eg.msgbox("Thank you for using this Menu Combo Program!!", "Goodbye!", ok_button=":D")
 
 
@@ -54,7 +57,7 @@ def helpbutton():  # A function containing the code for when a user interacts wi
     while help_options != "Cancel":  # checks if the user wants to cancel, if not, loops
         help_options = eg.buttonbox("Sure! What do you need help with?\n"
                                     "(Click the Cancel button to return to the main menu).",
-                                    "HELP MENU", choices=("'Search'", "'Add'", "'Help'", "'Exit'", "Cancel"))
+                                    "HELP MENU", choices=("'Search'", "'Add'", "'List'", "'Help'", "'Exit'", "Cancel"))
         if help_options == "'Search'":  # depending on what button is selected, information about the button will be displayed
             eg.msgbox("This button allows you to search through the combo's currently stored in the database. If there is a "
                       "match for the combo name entered, it will display the combo, and then ask if you want to make any "
@@ -63,6 +66,11 @@ def helpbutton():  # A function containing the code for when a user interacts wi
             eg.msgbox("This button creates a new combo to add to the menu. After entering the details for the new combo, "
                       "it will ask if you want to make any changes, add it to the menu, or cancel after/during the process.",
                       "Add-Button Help", ok_button="Back")
+        elif help_options == "'List'":
+            eg.msgbox("This button will create two outputs. It will list all of the combo names on an Easy Gui pop up, and "
+                      "send a full menu to the python console, including the combo names, the items and prices of each combo, "
+                      "and a total price for the combo.",
+                      "List-Button Help", ok_button="Back")
         elif help_options == "'Help'":
             eg.msgbox("This button displays the Help Menu, from which you can view small, informative tips about all of the "
                       "buttons on the main menu - such as this one.", "Help-Button Help", ok_button="Back")
@@ -76,7 +84,7 @@ def helpbutton():  # A function containing the code for when a user interacts wi
             return
 
 
-def search_button():
+def searchbutton():
     query = eg.enterbox("Enter the combo name to search for:", "Enter Query").upper()
     proceed = ""
     while proceed != "Cancel":
@@ -154,4 +162,4 @@ def addcombo():
 
 # Main code...
 mainmenu(eg.buttonbox("Hello! Welcome to the Ultimate Burger Combo Menu!\n"  # calls on the main menu function using a player input
-                      "What would you like to do?", "MAIN MENU", choices=("Search", "Add", "Help", "Exit")))
+                      "What would you like to do?", "MAIN MENU", choices=("Search", "Add", "List", "Help", "Exit")))

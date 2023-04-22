@@ -27,7 +27,7 @@ combos = {
 
 
 # Functions...
-def search_button():
+def searchbutton():
     query = eg.enterbox("Enter the combo name to search for:", "Enter Query").upper()
     proceed = ""
     while proceed != "Cancel":
@@ -55,4 +55,4 @@ def search_button():
 
 
 # Main code...
-search_button()
+searchbutton()
